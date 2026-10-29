@@ -1,7 +1,12 @@
 {
   "domain": "themeparks_wiki",
   "name": "ThemeParks.wiki",
-  "codeowners": ["@DeltaEchoFour"],
+  "categories": [
+    "local_services"
+  ],
+  "codeowners": [
+    "@DeltaEchoFour"
+  ],
   "config_flow": true,
   "documentation": "https://github.com/DeltaEchoFour/ha-themeparks-wiki",
   "integration_type": "service",
