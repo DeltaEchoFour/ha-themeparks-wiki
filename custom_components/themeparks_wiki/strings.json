@@ -1,0 +1,102 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "ThemeParks.wiki",
+        "description": "Live wait times, park hours and showtimes from ThemeParks.wiki. An API key is optional: without one, requests are limited per IP address. You can create a key at {url}.",
+        "data": {
+          "api_key": "API key (optional)"
+        },
+        "data_description": {
+          "api_key": "Leave empty to use the API without a key."
+        }
+      },
+      "destination": {
+        "title": "Choose a resort",
+        "data": {
+          "destination": "Resort"
+        }
+      },
+      "parks": {
+        "title": "Choose parks",
+        "description": "Pick the parks at {destination} to track. You can change this later in the integration's options.",
+        "data": {
+          "parks": "Parks"
+        }
+      },
+      "legacy": {
+        "title": "Take over the old Theme Parks integration",
+        "description": "{count} entities from the old Theme Parks integration ({old}) match this resort. Turn this on to give the new entities the same entity IDs, names, areas, labels, aliases and voice exposure, and keep their history. The old integration's entry is removed so its entity IDs are free; its files stay installed until you remove them in HACS.",
+        "data": {
+          "take_over_legacy": "Take over entity IDs and remove the old integration"
+        }
+      },
+      "reconfigure": {
+        "title": "API key",
+        "description": "This entry currently uses {current}. Enter a new key to replace it, or leave the field empty to keep the current one.",
+        "data": {
+          "api_key": "New API key",
+          "remove_api_key": "Remove the API key and use the API without one"
+        }
+      },
+      "reauth_confirm": {
+        "title": "ThemeParks.wiki rejected the API key",
+        "description": "Enter a new API key, or leave it empty to use the API without one.",
+        "data": {
+          "api_key": "API key (optional)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "ThemeParks.wiki rejected that API key.",
+      "cannot_connect": "Could not reach ThemeParks.wiki.",
+      "rate_limited": "ThemeParks.wiki is rate limiting requests right now. Try again in a minute.",
+      "no_parks": "Choose at least one park."
+    },
+    "abort": {
+      "already_configured": "This resort is already set up.",
+      "no_destinations": "ThemeParks.wiki returned no resorts.",
+      "reconfigure_successful": "The API key was updated.",
+      "reauth_successful": "The API key was updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "ThemeParks.wiki options",
+        "data": {
+          "parks": "Parks",
+          "include_shows": "Shows",
+          "include_restaurants": "Restaurants",
+          "include_other": "Areas outside the parks",
+          "calendars": "Park hours calendars",
+          "live_interval": "Live data update interval",
+          "schedule_interval": "Park hours update interval"
+        },
+        "data_description": {
+          "include_shows": "Create a sensor for each show, with its showtimes as attributes.",
+          "include_restaurants": "Create a sensor for each restaurant that reports a wait.",
+          "include_other": "Attractions that belong to the resort but to no park, such as those at Disney Springs.",
+          "calendars": "One calendar per park with opening hours, extra hours and ticketed events for the next 30 days.",
+          "live_interval": "ThemeParks.wiki refreshes live data every 60 seconds, so a shorter interval returns the same data.",
+          "schedule_interval": "Park hours change rarely; once an hour is plenty."
+        }
+      }
+    },
+    "error": {
+      "no_parks": "Choose at least one park."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "park_status": {
+        "name": "Status"
+      }
+    },
+    "calendar": {
+      "park_hours": {
+        "name": "Hours"
+      }
+    }
+  }
+}

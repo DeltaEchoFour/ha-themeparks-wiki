@@ -1,0 +1,12 @@
+{
+  "domain": "themeparks_wiki",
+  "name": "ThemeParks.wiki",
+  "codeowners": ["@DeltaEchoFour"],
+  "config_flow": true,
+  "documentation": "https://github.com/DeltaEchoFour/ha-themeparks-wiki",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/DeltaEchoFour/ha-themeparks-wiki/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}
